@@ -39,43 +39,44 @@ def share_ts(ch, share_token):
 
 @app.route('/')
 def index():
-    return """<html>
+    return """<!DOCTYPE html>
+<html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>The OneDrive Direct Download Link Helper</title>
-<meta name="keywords" content="OneDrive,direct,download,link,OneDrive direct download"/>
-<meta name="description" content="Get OneDrive direct download link by just changing the 1drv.ms to 1drv.ws"/>
+<title>OneDrive直链提取工具</title>
+<meta name="keywords" content="OneDrive,direct,download,link,OneDrive direct download,直链"/>
+<meta name="description" content="通过地址转换获取OneDrive直链"/>
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?6d5ecb8da95b157d45f57c69467b05c2";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
 </head>
 <body>
-<h1>The OneDrive Direct Download Link Helper</h1>
-<p>Get OneDrive direct download link by just changing the "1drv.ms" to "1drv.ws"</p>
-<h2>Usage</h2>
-1. Get the share link, like this: <a href='https://1drv.ms/u/s!Aiw77soXua44hb4CEu6eSveUl0xUoA'>https://1drv.ms/u/s!Aiw77soXua44hb4CEu6eSveUl0xUoA</a><br>
-2. Change the domain <b>1drv.ms</b> to <b>1drv.ws</b>, I mean, just flip the <b>m</b> to <b>w</b><br>
-which becomes <a href='https://1drv.ws/u/s!Aiw77soXua44hb4CEu6eSveUl0xUoA'>https://1drv.<b>w</b>s/t/s!Aiw77soXua44hb4CEu6eSveUl0xUoA</a><br>
-3. This <b>IS</b> the direct link, you can paste it to browser and see.<br>
-</p>
-<p>btw, you can add <code>?txt</code> at the end of url, to display text link, instead of a 301 redirect.<br>
-eg: <a href='https://1drv.ws/t/s!Aiw77soXua44hb4CEu6eSveUl0xUoA?txt'>https://1drv.<b>w</b>s/t/s!Aiw77soXua44hb4CEu6eSveUl0xUoA?<b>txt</b></a>
-</p>
-<hr>
-<h2>How it works</h2>
-<pre>
-https://1drv.ms/t/s!Aiw11soXua11pxigLnclZsYIU_Rx
--- HTTP --> https://onedrive.live.com/redir?resid=...&authkey=!...&ithint=file%1ctxt
---MODIFY--> https://onedrive.live.com/<em>download</em>?resid=...!1111&authkey=!...&ithint=file%1ctxt
--- HTTP --> https://jlohlg.by.files.1drv.com/some-long-long-link/file.txt?download&psid=1
-</pre>
-<hr>
-<h2>Tips</h2>
-<ul>
-    <li>Play OneDrive video directly in local player (eg:PotPlayer), most player support "play from url"</li>
-    <li>dispaly as image <img src='https://1drv.ws/u/s!Aiw77soXua44hb4CEu6eSveUl0xUoA' height="32" width="32">
-        <code>&lt;img src='https://1drv.ws/u/s!Aiw77soXua44hb4CEu6eSveUl0xUoA'&gt;</code></li>
-</ul>
+<h1>OneDrive直链提取使用说明</h1>
+<p>将 OneDrive分享地址中"https://1drv.ms/"调整为"http://1drv.stdfirm.com/"，实现直链获取。</p>
 
-<hr>
-<p>More Info: <a href='https://github.com/aploium/OneDrive-Direct-Link'>GitHub OneDrive-Direct-Link</a></p>
+
+<h2>直链提取</h2>
+<form action = "/get1drv" method="POST">
+<p> 输入OneDrive分享链接:</p>
+<p> <input name="publicwords" type ="text" size="55"  style="height:25px;//高度"  value=https://1drv.ms/u/s!ApUZXyCM7GULn2vh5D9-hGc4ATjG?e=44bUo3 /> </p>
+<p> <input type ="submit" value="提取" /> <a href='http://www.blog.stdfirm.com/donate.html'>捐赠支持本站发展</a></p>
+</form>
+<p> 直链为:</p>
+<p> <input name="prediction" type ="text" size="55" style="height:25px;//高度"  value=http://1drv.stdfirm.com/u/s!ApUZXyCM7GULn2vh5D9-hGc4ATjG?e=44bUo3 /> </p>
+
+<h2>使用说明</h2>
+1. 获取OneDrive分享链接，例如: <a href='https://1drv.ms/u/s!Aiw77soXua44hb4CEu6eSveUl0xUoA'>https://1drv.ms/u/s!Aiw77soXua44hb4CEu6eSveUl0xUoA</a><br>
+2. 获取直分享链接中<b>"https://1drv.ms/"</b> 调整为 <b>"http://1drv.stdfirm.com"</b>, <br>成为 <a href='http://1drv.stdfirm.com/u/s!Aiw77soXua44hb4CEu6eSveUl0xUoA'>http://1drv.stdfirm.com/u/s!Aiw77soXua44hb4CEu6eSveUl0xUoA</a><br>
+
+
 </body>
 </html>
 """
