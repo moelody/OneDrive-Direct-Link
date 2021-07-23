@@ -11,6 +11,11 @@
       "path": "/",
       "method": "GET",
       "status": 200
+    },[
+    {
+      "path": "/*",
+      "method": "GET",
+      "status": 200
     }
   ]
 }
