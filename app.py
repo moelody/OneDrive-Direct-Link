@@ -60,21 +60,21 @@ var _hmt = _hmt || [];
 </head>
 <body>
 <h1>OneDrive直链提取使用说明</h1>
-<p>将 OneDrive分享地址中"https://1drv.ms/"调整为"http://1drv.stdfirm.com/"，实现直链获取。</p>
+<p>将 OneDrive分享地址中"https://1drv.ms/"调整为"https://onedrive-direct-link.herokuapp.com/"，实现直链获取。</p>
 
 
 <h2>直链提取</h2>
-<form action = "/get1drv" method="POST">
+<form action = "/" method="POST">
 <p> 输入OneDrive分享链接:</p>
 <p> <input name="publicwords" type ="text" size="55"  style="height:25px;//高度"  value=https://1drv.ms/u/s!ApUZXyCM7GULn2vh5D9-hGc4ATjG?e=44bUo3 /> </p>
-<p> <input type ="submit" value="提取" /> <a href='http://www.blog.stdfirm.com/donate.html'>捐赠支持本站发展</a></p>
+<p> <input type ="submit" value="提取" /> <a href='https://www.moelody.com'>捐赠支持本站发展</a></p>
 </form>
 <p> 直链为:</p>
-<p> <input name="prediction" type ="text" size="55" style="height:25px;//高度"  value=http://1drv.stdfirm.com/u/s!ApUZXyCM7GULn2vh5D9-hGc4ATjG?e=44bUo3 /> </p>
+<p> <input name="prediction" type ="text" size="55" style="height:25px;//高度"  value=https://onedrive-direct-link.herokuapp.com/u/s!ApUZXyCM7GULn2vh5D9-hGc4ATjG?e=44bUo3 /> </p>
 
 <h2>使用说明</h2>
 1. 获取OneDrive分享链接，例如: <a href='https://1drv.ms/u/s!Aiw77soXua44hb4CEu6eSveUl0xUoA'>https://1drv.ms/u/s!Aiw77soXua44hb4CEu6eSveUl0xUoA</a><br>
-2. 获取直分享链接中<b>"https://1drv.ms/"</b> 调整为 <b>"http://1drv.stdfirm.com"</b>, <br>成为 <a href='http://1drv.stdfirm.com/u/s!Aiw77soXua44hb4CEu6eSveUl0xUoA'>http://1drv.stdfirm.com/u/s!Aiw77soXua44hb4CEu6eSveUl0xUoA</a><br>
+2. 获取直分享链接中<b>"https://1drv.ms/"</b> 调整为 <b>"https://onedrive-direct-link.herokuapp.com"</b>, <br>成为 <a href='https://onedrive-direct-link.herokuapp.com/u/s!Aiw77soXua44hb4CEu6eSveUl0xUoA'>https://onedrive-direct-link.herokuapp.com/u/s!Aiw77soXua44hb4CEu6eSveUl0xUoA</a><br>
 
 
 </body>
